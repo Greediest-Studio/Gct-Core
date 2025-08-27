@@ -53,6 +53,4 @@ public class EventHooks {
         boolean allow = (isDedicated && isPlayer) || (!isDedicated && (isPlayerMP || isConsole));
         event.setCanceled(!allow);
     }
-
-
 }

@@ -6,19 +6,14 @@ import zone.rong.mixinbooter.ILateMixinLoader;
 import java.util.*;
 import java.util.function.BooleanSupplier;
 
-/**
- * Created by IntelliJ IDEA.
- *
- * @Author : wdcftgg
- * @create 2024/1/20 10:54
- */
 @SuppressWarnings("unused")
 public class MixinConfig implements ILateMixinLoader {
 
     private static final Map<String, BooleanSupplier> MIXIN_CONFIGS = new LinkedHashMap<>();
 
     static {
-        addModdedMixinCFG("mixins.gctcore.json", "aether_legacy");
+        addModdedMixinCFG("mixins.gctcore.aether.json", "aether_legacy");
+        addModdedMixinCFG("mixins.gctcore.astralsorcery.json", "astralsorcery");
     }
 
     @Override

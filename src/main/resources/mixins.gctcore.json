@@ -1,13 +1,11 @@
 {
-	"package": "com.smd.gctcore.mixin.aether",
+	"package": "",
 	"required": true,
 	"refmap": "mixins.gctcore.refmap.json",
 	"target": "@env(DEFAULT)",
 	"minVersion": "0.8.5",
 	"compatibilityLevel": "JAVA_8",
-	"mixins": [
-		"MixinAetherEventHandler"
-	],
+	"mixins": [],
 	"server": [],
 	"client": []
 }

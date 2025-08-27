@@ -127,6 +127,7 @@ dependencies {
     }
 
     implementation "curse.maven:aether-255308:6316434"
+    implementation "curse.maven:AstralSorcery-241721:3044416"
 
     if (propertyBool('use_asset_mover')) {
         implementation "com.cleanroommc:assetmover:${propertyString('asset_mover_version')}"
