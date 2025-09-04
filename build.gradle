@@ -137,7 +137,6 @@ dependencies {
     implementation "curse.maven:redstone-flux-270789:2920436"
     implementation "curse.maven:jei-238222:5846804"
     implementation "curse.maven:baubles-227083:2518667"
-    implementation "curse.maven:ageofminecraft-247133:2849572"
     implementation "curse.maven:Mantle-74924:2713386"
     implementation "curse.maven:TConstruct-74072:2902483"
 
