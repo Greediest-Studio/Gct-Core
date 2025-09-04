@@ -14,6 +14,7 @@ public class MixinConfig implements ILateMixinLoader {
     static {
         addModdedMixinCFG("mixins.gctcore.aether.json", "aether_legacy");
         addModdedMixinCFG("mixins.gctcore.astralsorcery.json", "astralsorcery");
+        addModdedMixinCFG("mixins.gctcore.ageofminecraft.json", "ageofminecraft");
         addModdedMixinCFG("mixins.gctcore.tconstruct.json", "tconstruct");
     }
 
