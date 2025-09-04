@@ -17,10 +17,13 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EventHooks {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
+    @SideOnly(Side.CLIENT)
     public void onTextureStitch(TextureStitchEvent.Pre event) {
         BiMap<String, Fluid> masterFluidReference = ObfuscationReflectionHelper.getPrivateValue(FluidRegistry.class, null, "masterFluidReference");
         TextureMap map = event.getMap();
@@ -32,6 +35,7 @@ public class EventHooks {
     }
 
     @SubscribeEvent
+    @SideOnly(Side.SERVER)
     public void blockBreakSpeed(PlayerEvent.BreakSpeed event){
         if(!event.getEntityPlayer().onGround && (event.getEntityPlayer().capabilities.isFlying)){
             event.setNewSpeed(event.getOriginalSpeed() * 5);
@@ -39,6 +43,7 @@ public class EventHooks {
     }
 
     @SubscribeEvent
+    @SideOnly(Side.SERVER)
     public static void onCommandEvent(CommandEvent event) {
         ICommand command = event.getCommand();
 
