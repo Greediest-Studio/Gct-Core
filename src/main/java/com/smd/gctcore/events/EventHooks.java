@@ -1,7 +1,6 @@
 package com.smd.gctcore.events;
 
 import com.google.common.collect.BiMap;
-import com.smd.gctcore.Tags;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.command.CommandDifficulty;
 import net.minecraft.command.CommandGameRule;
@@ -15,14 +14,12 @@ import net.minecraftforge.event.CommandEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public class EventHooks {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
