@@ -11,5 +11,7 @@ public class gctcore {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new EventHooks());
+        DimensionManager.registerDimension(114514, DimensionTypeAirport.Airport);
+        DimensionManager.registerDimension(-114514, DimensionTypeNothingness.nothingness);
     }
 }
