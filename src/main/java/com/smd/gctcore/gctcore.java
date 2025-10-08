@@ -13,5 +13,6 @@ public class gctcore {
         MinecraftForge.EVENT_BUS.register(new EventHooks());
         DimensionManager.registerDimension(114514, DimensionTypeAirport.Airport);
         DimensionManager.registerDimension(-114514, DimensionTypeNothingness.nothingness);
+        DimensionManager.registerDimension(103, DimensionTypeOrderCore.ordercore);
     }
 }
