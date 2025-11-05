@@ -19,9 +19,17 @@ public class ClientProxy {
     
     @SubscribeEvent
     public void onFogDensity(EntityViewRenderEvent.FogDensity event) {
-        // 调整OrderCore维度的雾效密度
+        // 完全禁用OrderCore维度的雾效
         if (event.getEntity().world.provider.getDimension() == 103) {
-            event.setDensity(0.1f);
+            event.setDensity(0.0f); // 设置为0完全关闭雾效
+            event.setCanceled(true);
+        }
+    }
+    
+    @SubscribeEvent
+    public void onFogColors(EntityViewRenderEvent.FogColors event) {
+        // 禁用OrderCore维度的雾颜色渲染
+        if (event.getEntity().world.provider.getDimension() == 103) {
             event.setCanceled(true);
         }
     }

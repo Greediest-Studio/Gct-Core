@@ -43,7 +43,8 @@ public class OrderCoreSkyRenderer extends IRenderHandler {
         
         GlStateManager.disableBlend();
         GlStateManager.enableAlpha();
-        GlStateManager.enableFog();
+        // 保持雾效禁用状态，不重新启用
+        // GlStateManager.enableFog(); // 注释掉这行以保持雾效禁用
     }
     
     private void renderSkyBox() {

@@ -60,8 +60,8 @@ public class WorldProviderOrderCore extends WorldProvider {
     @Override
     @SideOnly(Side.CLIENT)
     public net.minecraft.util.math.Vec3d getFogColor(float celestialAngle, float partialTicks) {
-        // 自定义雾颜色 - 与天空协调的紫色
-        return new net.minecraft.util.math.Vec3d(0.3D, 0.15D, 0.5D);
+        // 返回透明的雾颜色，实际上禁用雾效的视觉效果
+        return new net.minecraft.util.math.Vec3d(0.0D, 0.0D, 0.0D);
     }
 
     @Override
@@ -100,7 +100,20 @@ public class WorldProviderOrderCore extends WorldProvider {
 
     @Override
     public boolean doesXZShowFog(int x, int z) {
+        // 完全禁用坐标相关的雾效
         return false;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public float getFogStartFactor(float par1) {
+        // 设置雾的起始距离为最远，实际上禁用雾效
+        return 1.0F;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public float getFogEndFactor(float par1) {
+        // 设置雾的结束距离为最远，实际上禁用雾效
+        return 1.0F;
     }
 
     @Override
