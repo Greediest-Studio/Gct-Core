@@ -46,11 +46,6 @@ public class WorldProviderOrderCore extends WorldProvider {
     }
 
     @Override
-    public float getCloudHeight(){
-        return 255;
-    }
-
-    @Override
     @SideOnly(Side.CLIENT)
     public net.minecraft.util.math.Vec3d getSkyColor(net.minecraft.entity.Entity cameraEntity, float partialTicks) {
         // 自定义天空颜色 - 深紫色
@@ -104,16 +99,22 @@ public class WorldProviderOrderCore extends WorldProvider {
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
-    public float getFogStartFactor(float par1) {
-        // 设置雾的起始距离为最远，实际上禁用雾效
-        return 1.0F;
+    @Override
+    public float getCloudHeight() {
+        // 将云层设置得很高，减少视觉干扰
+        return 512.0F;
     }
 
-    @SideOnly(Side.CLIENT)
-    public float getFogEndFactor(float par1) {
-        // 设置雾的结束距离为最远，实际上禁用雾效
-        return 1.0F;
+    @Override
+    public double getVoidFogYFactor() {
+        // 禁用虚空雾效
+        return 0.0D;
+    }
+
+    @Override
+    public boolean doesWaterVaporize() {
+        // 禁用水蒸发（可能产生雾效）
+        return false;
     }
 
     @Override

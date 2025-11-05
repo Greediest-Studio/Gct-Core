@@ -28,9 +28,13 @@ public class ClientProxy {
     
     @SubscribeEvent
     public void onFogColors(EntityViewRenderEvent.FogColors event) {
-        // 禁用OrderCore维度的雾颜色渲染
+        // 设置OrderCore维度的雾颜色为透明（相当于关闭雾效）
         if (event.getEntity().world.provider.getDimension() == 103) {
-            event.setCanceled(true);
+            // 不能取消FogColors事件，但可以设置为透明色来隐藏雾效
+            event.setRed(0.0f);
+            event.setGreen(0.0f);
+            event.setBlue(0.0f);
+            // 注意：不调用setCanceled()，因为FogColors事件不可取消
         }
     }
     
