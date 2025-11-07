@@ -1,4 +1,9 @@
 item.gctcore.chaotic_flux_capacitor.name=Chaotic Flux Capacitor
-info.gct.energy=Energy
 item.gctcore.ordered_flux_capacitor.name=Ordered Flux Capacitor
 item.gctcore.frostburn_flux_capacitor.name=Frostburn Flux Capacitor
+
+item.bloodmagic.gctcore.InfSoulGem.name=[fina]soul gem
+
+tooltip.bloodmagic.infSoulGem=Can it really be filled completely?
+
+info.gct.energy=Energy

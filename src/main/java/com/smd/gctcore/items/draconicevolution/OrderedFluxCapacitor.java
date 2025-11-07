@@ -1,4 +1,4 @@
-package com.smd.gctcore.items;
+package com.smd.gctcore.items.draconicevolution;
 
 import com.brandon3055.brandonscore.items.ItemEnergyBase;
 import com.brandon3055.brandonscore.lib.ChatHelper;

@@ -1,4 +1,4 @@
-package com.smd.gctcore.items;
+package com.smd.gctcore.items.draconicevolution;
 
 import com.brandon3055.brandonscore.items.ItemEnergyBase;
 import com.brandon3055.brandonscore.lib.ChatHelper;
@@ -31,44 +31,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Chaotic 级通量容器（联动 DE），写法对齐 DraconiumCapacitor。
- * - 单一 Chaotic 等级
- * - 基础容量 1,024,000,000 RF
- * - 传输速率 512,000,000 RF/t
- * - 支持 RF_CAPACITY 升级，最多 4 级，按 DE 公式：base + upgrade * (base / 2)
+ * Frostburn 级通量容器（MK5）。
+ * - 基础容量 16,384,000,000 RF
+ * - 传输速率 8,192,000,000 RF/t（对外 RF 单次受 int 限制）
+ * - 支持 RF_CAPACITY 升级，最多 4 级，公式：base + upgrade * (base / 2)
  */
 @Optional.Interface(iface = "baubles.api.IBauble", modid = "baubles")
-public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, IUpgradableItem, IBauble {
+public class FrostburnFluxCapacitor extends ItemEnergyBase implements IInvCharge, IUpgradableItem, IBauble {
 
-     // 对外 RF 接口依然是 int；内部采用 long 存储避免溢出
-     public static final int TRANSFER = 512_000_000;
-     public static final long BASE_CAPACITY = 1_024_000_000L;
-     private static final String NBT_ENERGY_L = "EnergyL";
+    public static final long TRANSFER_L = 8_192_000_000L; // 内部长整型传输上限
+    public static final long BASE_CAPACITY = 16_384_000_000L; // 内部长整形容量
+    private static final String NBT_ENERGY_L = "EnergyL";
 
-    public ChaoticFluxCapacitor() {
+    public FrostburnFluxCapacitor() {
         setHasSubtypes(false);
         setMaxStackSize(1);
-        setTranslationKey("gctcore.chaotic_flux_capacitor");
-        setRegistryName("chaotic_flux_capacitor");
+        setTranslationKey("gctcore.frostburn_flux_capacitor");
+        setRegistryName("frostburn_flux_capacitor");
         setCreativeTab(CreativeTabs.TOOLS);
     }
 
     @Override
     public void getSubItems(CreativeTabs tab, net.minecraft.util.NonNullList<ItemStack> items) {
         if (!isInCreativeTab(tab)) return;
-        // 基础款
         items.add(new ItemStack(this));
-        // 满能量款
         ItemStack charged = new ItemStack(this);
         setEnergyStoredLong(charged, getCapacityLong(charged));
         items.add(charged);
     }
 
-    //region Item entity persistence (match DE style)
+    //region Item entity persistence
     @Override
-    public boolean hasCustomEntity(ItemStack stack) {
-        return true;
-    }
+    public boolean hasCustomEntity(ItemStack stack) { return true; }
 
     @Override
     public Entity createEntity(World world, Entity location, ItemStack itemstack) {
@@ -76,7 +70,7 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
     }
     //endregion
 
-    //region Energy
+    //region Energy (long 内部 + RF 桥接)
     @Override
     public int getCapacity(ItemStack stack) {
         long capL = getCapacityLong(stack);
@@ -90,14 +84,10 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
     }
 
     @Override
-    public int getMaxReceive(ItemStack stack) {
-        return TRANSFER;
-    }
+    public int getMaxReceive(ItemStack stack) { return Integer.MAX_VALUE; }
 
     @Override
-    public int getMaxExtract(ItemStack stack) {
-        return TRANSFER;
-    }
+    public int getMaxExtract(ItemStack stack) { return Integer.MAX_VALUE; }
 
     @Override
     public int getEnergyStored(ItemStack container) {
@@ -105,7 +95,6 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
         return energy > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) energy;
     }
 
-    /** 内部长整型存储，避免超过 int 上限 */
     public long getEnergyStoredLong(ItemStack stack) {
         long energy = ItemNBTHelper.getLong(stack, NBT_ENERGY_L, 0L);
         long cap = getCapacityLong(stack);
@@ -126,7 +115,7 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
         if (maxReceive <= 0) return 0;
         long energy = getEnergyStoredLong(stack);
         long cap = getCapacityLong(stack);
-        long canReceive = Math.min(Integer.toUnsignedLong(Math.max(0, maxReceive)), TRANSFER);
+        long canReceive = Math.min(Integer.toUnsignedLong(Math.max(0, maxReceive)), TRANSFER_L);
         long space = cap - energy;
         long toReceive = Math.min(canReceive, space);
         if (toReceive <= 0) return 0;
@@ -138,7 +127,7 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
     public int extractEnergy(ItemStack stack, int maxExtract, boolean simulate) {
         if (maxExtract <= 0) return 0;
         long energy = getEnergyStoredLong(stack);
-        long canExtract = Math.min(Integer.toUnsignedLong(Math.max(0, maxExtract)), TRANSFER);
+        long canExtract = Math.min(Integer.toUnsignedLong(Math.max(0, maxExtract)), TRANSFER_L);
         long toExtract = Math.min(canExtract, energy);
         if (toExtract <= 0) return 0;
         if (!simulate) setEnergyStoredLong(stack, energy - toExtract);
@@ -146,7 +135,7 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
     }
     //endregion
 
-    //region Activation & update (mode 0..4 like DE)
+    //region Activation & update
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
         ItemStack stack;
@@ -160,6 +149,7 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
         } else {
             stack = player.inventory.offHandInventory.isEmpty() ? ItemStack.EMPTY : player.inventory.offHandInventory.get(0);
         }
+
         boolean sneaking = false;
         try {
             sneaking = player.isSneaking();
@@ -181,7 +171,6 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
     public void onUpdate(ItemStack container, World world, Entity entity, int itemSlot, boolean isSelected) {
         if (!(entity instanceof EntityPlayer)) return;
         EntityPlayer player = (EntityPlayer) entity;
-        // 如果装了 Baubles，把 baubles 槽的物品先放入列表；否则传空列表
         List<ItemStack> baubleStacks = ModHelper.isBaublesInstalled ? getBaubles(player) : new ArrayList<>();
         updateEnergy(container, player, baubleStacks);
     }
@@ -201,10 +190,8 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
                 stacks.clear(); // 不给 baubles 充电
             }
             if (mode == 2 || mode == 3) { // 手持
-                // Offhand
                 ItemStack off = player.inventory.offHandInventory.isEmpty() ? ItemStack.EMPTY : player.inventory.offHandInventory.get(0);
                 if (off != null && !off.isEmpty()) stacks.add(off);
-                // Main hand (current hotbar index)
                 int idx = player.inventory.currentItem;
                 if (idx >= 0 && idx < player.inventory.mainInventory.size()) {
                     ItemStack main = player.inventory.getStackInSlot(idx);
@@ -228,21 +215,12 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
     }
 
     @Override
-    public boolean canCharge(ItemStack stack, EntityPlayer player) {
-        return false; // This item does not get charged by other IInvCharge items
-    }
+    public boolean canCharge(ItemStack stack, EntityPlayer player) { return false; }
     //endregion
-
-    @SideOnly(Side.CLIENT)
-    private static boolean isClientSneakKeyDown() {
-        return net.minecraft.client.Minecraft.getMinecraft().gameSettings.keyBindSneak.isKeyDown();
-    }
 
     //region Display
     @Override
-    public boolean hasEffect(ItemStack stack) {
-        return ItemNBTHelper.getShort(stack, "Mode", (short) 0) > 0;
-    }
+    public boolean hasEffect(ItemStack stack) { return ItemNBTHelper.getShort(stack, "Mode", (short) 0) > 0; }
 
     @SideOnly(Side.CLIENT)
     @Override
@@ -251,68 +229,42 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
             tooltip.add(I18n.format("info.de.changwMode.txt"));
             tooltip.add(InfoHelper.ITC() + I18n.format("info.de.capacitorMode.txt") + ": " + InfoHelper.HITC() + I18n.format("info.de.capacitorMode" + ItemNBTHelper.getShort(stack, "Mode", (short) 0) + ".txt"));
         }
-
-    // 升级提示
-    com.brandon3055.draconicevolution.items.tools.ToolBase.holdCTRLForUpgrades(tooltip, stack);
-
-    // 自定义基于 long 的能量显示，单位采用 K/M/G/T
-    long energy = getEnergyStoredLong(stack);
-    long cap = getCapacityLong(stack);
-    tooltip.add(formatEnergyLine(energy, cap));
-    }
-    //endregion
-
-    //region IUpgradableItem
-    @Override
-    public List<String> getValidUpgrades(ItemStack stack) {
-        return new ArrayList<String>() {{
-            add(ToolUpgrade.RF_CAPACITY);
-        }};
+        com.brandon3055.draconicevolution.items.tools.ToolBase.holdCTRLForUpgrades(tooltip, stack);
+        long energy = getEnergyStoredLong(stack);
+        long cap = getCapacityLong(stack);
+        tooltip.add(formatEnergyLine(energy, cap));
     }
 
-    @Override
-    public int getMaxUpgradeLevel(ItemStack stack, String upgrade) {
-        return ToolUpgrade.RF_CAPACITY.equals(upgrade) ? 4 : 0;
-    }
-    //endregion
-
-    //region Formatting
     private static String formatEnergyLine(long energy, long capacity) {
-        // 使用自定义本地化键，避免依赖 DE 的键
         return InfoHelper.ITC() + I18n.format("info.gct.energy") + ": " + InfoHelper.HITC() +
                 formatWithUnit(energy) + " / " + formatWithUnit(capacity) + " RF";
     }
 
     private static String formatWithUnit(long value) {
-        // 使用 1000 进制，显示为 K/M/G/T（大写）
-        final long K = 1_000L;
-        final long M = 1_000_000L;
-        final long G = 1_000_000_000L;
-        final long T = 1_000_000_000_000L;
-
-        String unit;
-        double num;
+        final long K = 1_000L, M = 1_000_000L, G = 1_000_000_000L, T = 1_000_000_000_000L;
+        String unit; double num;
         if (value >= T) { unit = "T"; num = value / 1_000_000_000_000d; }
         else if (value >= G) { unit = "G"; num = value / 1_000_000_000d; }
         else if (value >= M) { unit = "M"; num = value / 1_000_000d; }
         else if (value >= K) { unit = "K"; num = value / 1_000d; }
         else { return Long.toString(value); }
-
-        // 保留最多 2 位小数，去掉多余 0
         String s = String.format(java.util.Locale.ROOT, "%.2f", num);
-        while (s.contains(".") && (s.endsWith("0") || s.endsWith("."))) {
-            s = s.substring(0, s.length() - 1);
-        }
+        while (s.contains(".") && (s.endsWith("0") || s.endsWith("."))) { s = s.substring(0, s.length() - 1); }
         return s + unit;
     }
+    //endregion
+
+    //region IUpgradableItem
+    @Override
+    public List<String> getValidUpgrades(ItemStack stack) { return new ArrayList<String>() {{ add(ToolUpgrade.RF_CAPACITY); }}; }
+    @Override
+    public int getMaxUpgradeLevel(ItemStack stack, String upgrade) { return ToolUpgrade.RF_CAPACITY.equals(upgrade) ? 4 : 0; }
     //endregion
 
     //region Baubles
     @Override
     @Optional.Method(modid = "baubles")
-    public BaubleType getBaubleType(ItemStack itemstack) {
-        return BaubleType.TRINKET;
-    }
+    public BaubleType getBaubleType(ItemStack itemstack) { return BaubleType.TRINKET; }
 
     @Override
     @Optional.Method(modid = "baubles")
@@ -322,8 +274,11 @@ public class ChaoticFluxCapacitor extends ItemEnergyBase implements IInvCharge, 
         updateEnergy(itemstack, player, getBaubles(player));
     }
 
-    private static List<ItemStack> getBaubles(EntityPlayer player) {
-        return BaublesHelper.getBaubles(player);
-    }
+    private static List<ItemStack> getBaubles(EntityPlayer player) { return BaublesHelper.getBaubles(player); }
     //endregion
+
+    @SideOnly(Side.CLIENT)
+    private static boolean isClientSneakKeyDown() {
+        return net.minecraft.client.Minecraft.getMinecraft().gameSettings.keyBindSneak.isKeyDown();
+    }
 }

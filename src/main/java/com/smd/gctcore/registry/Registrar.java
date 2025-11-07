@@ -18,8 +18,9 @@ public class Registrar {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(GctItems.CHAOTIC_FLUX_CAPACITOR);
-    event.getRegistry().register(GctItems.ORDERED_FLUX_CAPACITOR);
-    event.getRegistry().register(GctItems.FROSTBURN_FLUX_CAPACITOR);
+        event.getRegistry().register(GctItems.ORDERED_FLUX_CAPACITOR);
+        event.getRegistry().register(GctItems.FROSTBURN_FLUX_CAPACITOR);
+        event.getRegistry().register(GctItems.INF_GEMSOUL);
     }
 
     @SubscribeEvent
@@ -27,9 +28,11 @@ public class Registrar {
     public static void onModelRegistry(ModelRegistryEvent event) {
         ModelLoader.setCustomModelResourceLocation(GctItems.CHAOTIC_FLUX_CAPACITOR, 0,
                 new ModelResourceLocation(GctItems.CHAOTIC_FLUX_CAPACITOR.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(GctItems.ORDERED_FLUX_CAPACITOR, 0,
-        new ModelResourceLocation(GctItems.ORDERED_FLUX_CAPACITOR.getRegistryName(), "inventory"));
-    ModelLoader.setCustomModelResourceLocation(GctItems.FROSTBURN_FLUX_CAPACITOR, 0,
-        new ModelResourceLocation(GctItems.FROSTBURN_FLUX_CAPACITOR.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(GctItems.ORDERED_FLUX_CAPACITOR, 0,
+                new ModelResourceLocation(GctItems.ORDERED_FLUX_CAPACITOR.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(GctItems.FROSTBURN_FLUX_CAPACITOR, 0,
+                new ModelResourceLocation(GctItems.FROSTBURN_FLUX_CAPACITOR.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(GctItems.INF_GEMSOUL, 0,
+                new ModelResourceLocation(GctItems.INF_GEMSOUL.getRegistryName(), "inventory"));
     }
 }

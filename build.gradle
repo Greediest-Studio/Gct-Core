@@ -111,6 +111,10 @@ repositories {
         name 'CoFH Maven'
         url 'https://maven.covers1624.net'
     }
+    maven {
+        name = "jared's maven"
+        url = uri("https://maven.blamejared.com/")
+    }
 }
 
 dependencies {
@@ -138,9 +142,15 @@ dependencies {
     implementation "curse.maven:jei-238222:5846804"
     implementation "curse.maven:baubles-227083:2518667"
     implementation "curse.maven:ageofminecraft-247133:2849572"
-    compileOnly "curse.maven:iceandfire-264231:2939529"
     implementation "curse.maven:Mantle-74924:2713386"
     implementation "curse.maven:TConstruct-74072:2902483"
+    implementation "curse.maven:mmce-817377:6945422"
+    implementation "curse.maven:bloodmagic-224791:2822288"
+    implementation "curse.maven:thermal-expansion-69163:2926431"
+    implementation "curse.maven:nuclearcraft-overhauled-336895:3862197"
+
+    compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698"
+    compileOnly "curse.maven:iceandfire-264231:2939529"
 
     if (propertyBool('use_asset_mover')) {
         implementation "com.cleanroommc:assetmover:${propertyString('asset_mover_version')}"
