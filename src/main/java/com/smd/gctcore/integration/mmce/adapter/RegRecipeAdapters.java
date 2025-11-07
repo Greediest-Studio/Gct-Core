@@ -30,6 +30,7 @@ public class RegRecipeAdapters {
             registerAdapter(new AdapterNCOIngotFormer());
             registerAdapter(new AdapterNCOCentrifuge());
             registerAdapter(new AdapterNCOElectrolyzer());
+            //registerAdapter(new AdapterNCOSeparator());
         }
         if (Mods.dr.isLoaded()) {
             registerAdapter(new AdapterDragonResearchFusionCrafting());
