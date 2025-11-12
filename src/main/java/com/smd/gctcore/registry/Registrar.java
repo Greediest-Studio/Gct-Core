@@ -20,7 +20,7 @@ public class Registrar {
         event.getRegistry().register(GctItems.CHAOTIC_FLUX_CAPACITOR);
         event.getRegistry().register(GctItems.ORDERED_FLUX_CAPACITOR);
         event.getRegistry().register(GctItems.FROSTBURN_FLUX_CAPACITOR);
-        event.getRegistry().register(GctItems.INF_GEMSOUL);
+        event.getRegistry().register(GctItems.ITEM_SOUL_GEM);
     }
 
     @SubscribeEvent
@@ -32,7 +32,5 @@ public class Registrar {
                 new ModelResourceLocation(GctItems.ORDERED_FLUX_CAPACITOR.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(GctItems.FROSTBURN_FLUX_CAPACITOR, 0,
                 new ModelResourceLocation(GctItems.FROSTBURN_FLUX_CAPACITOR.getRegistryName(), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(GctItems.INF_GEMSOUL, 0,
-                new ModelResourceLocation(GctItems.INF_GEMSOUL.getRegistryName(), "inventory"));
     }
 }

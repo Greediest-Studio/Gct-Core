@@ -1,9 +1,34 @@
+
+item.gctcore.ItemSoulGem.realInfinite.name=Real InfiniteGem Tartaric Gem
+item.gctcore.ItemSoulGem.improved.name=ImprovedGem Tartaric Gem
+item.gctcore.ItemSoulGem.concentra.name=ConcentraGem Tartaric Gem
+item.gctcore.ItemSoulGem.pure.name=PureGem Tartaric Gem
+item.gctcore.ItemSoulGem.extreme.name=ExtremeGem Tartaric Gem
+item.gctcore.ItemSoulGem.origin.name=OriginGem Tartaric Gem
+item.gctcore.ItemSoulGem.primordial.name=PrimordialGem Tartaric Gem
+item.gctcore.ItemSoulGem.eternal.name=EternalGem Tartaric Gem
+item.gctcore.ItemSoulGem.infinite.name=InfiniteGem Tartaric Gem
+
 item.gctcore.chaotic_flux_capacitor.name=Chaotic Flux Capacitor
 item.gctcore.ordered_flux_capacitor.name=Ordered Flux Capacitor
 item.gctcore.frostburn_flux_capacitor.name=Frostburn Flux Capacitor
 
-item.bloodmagic.gctcore.InfSoulGem.name=[fina]soul gem
+tooltip.bloodmagic.will=Will Quality: %1$,.2f
+tooltip.bloodmagic.currentBaseType.default=Raw
+tooltip.bloodmagic.currentBaseType.corrosive=Corrosive
+tooltip.bloodmagic.currentBaseType.destructive=Destructive
+tooltip.bloodmagic.currentBaseType.vengeful=Vengeful
+tooltip.bloodmagic.currentBaseType.steadfast=Steadfast
 
+tooltip.bloodmagic.soulgem.improved=The product of technology.
+tooltip.bloodmagic.soulgem.concentra=Forged through brutal compression.
+tooltip.bloodmagic.soulgem.pure=Can soul gems really be distilled?
+tooltip.bloodmagic.soulgem.extreme=The limit of a soul gem?
+tooltip.bloodmagic.soulgem.origin=Back to the essence.
+tooltip.bloodmagic.soulgem.primordial=A primordial soul gem?
+tooltip.bloodmagic.soulgem.eternal=Do we really have to keep going?
+tooltip.bloodmagic.soulgem.infinite=Truly infinite?
+tooltip.bloodmagic.soulgem.realInfinite=The pinnacle of arcane and technological mastery.
 tooltip.bloodmagic.infSoulGem=Can it really be filled completely?
 
 info.gct.energy=Energy
