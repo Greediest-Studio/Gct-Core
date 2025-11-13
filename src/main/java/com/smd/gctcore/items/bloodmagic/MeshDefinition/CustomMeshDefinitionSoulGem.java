@@ -25,6 +25,6 @@ public class CustomMeshDefinitionSoulGem implements ItemMeshDefinition {
 
             return new ModelResourceLocation(new ResourceLocation(gctcore.MODID, "soul_gem"), "type=" + variantName);
         }
-        return new ModelResourceLocation(new ResourceLocation(gctcore.MODID, "soul_gem"), "type=improvedgem_default");
+        return new ModelResourceLocation(new ResourceLocation(gctcore.MODID, "soul_gem"), "type=improved_default");
     }
 }

@@ -14,6 +14,8 @@ import net.minecraftforge.fml.relauncher.Side;
 @Mod(modid = "gctcore", name = "Gct Core", version = "1.0.6")
 public class gctcore {
 
+    public static final String MODID = "gctcore";
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new EventHooks());

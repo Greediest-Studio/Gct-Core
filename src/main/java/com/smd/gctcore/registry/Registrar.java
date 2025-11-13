@@ -2,8 +2,10 @@ package com.smd.gctcore.registry;
 
 import com.smd.gctcore.Tags;
 import com.smd.gctcore.init.GctItems;
+import WayofTime.bloodmagic.client.IMeshProvider;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -11,6 +13,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import com.google.common.collect.Sets;
+
+import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public class Registrar {
@@ -32,5 +37,22 @@ public class Registrar {
                 new ModelResourceLocation(GctItems.ORDERED_FLUX_CAPACITOR.getRegistryName(), "inventory"));
         ModelLoader.setCustomModelResourceLocation(GctItems.FROSTBURN_FLUX_CAPACITOR, 0,
                 new ModelResourceLocation(GctItems.FROSTBURN_FLUX_CAPACITOR.getRegistryName(), "inventory"));
+        
+        // 注册 Soul Gem (使用 IMeshProvider 接口)
+        if (GctItems.ITEM_SOUL_GEM instanceof IMeshProvider) {
+            IMeshProvider mesh = (IMeshProvider) GctItems.ITEM_SOUL_GEM;
+            ResourceLocation loc = mesh.getCustomLocation();
+            if (loc == null) {
+                loc = GctItems.ITEM_SOUL_GEM.getRegistryName();
+            }
+
+            Set<String> variants = Sets.newHashSet();
+            mesh.gatherVariants(variants::add);
+            for (String variant : variants) {
+                ModelLoader.registerItemVariants(GctItems.ITEM_SOUL_GEM, new ModelResourceLocation(loc, variant));
+            }
+
+            ModelLoader.setCustomMeshDefinition(GctItems.ITEM_SOUL_GEM, mesh.getMeshDefinition());
+        }
     }
 }

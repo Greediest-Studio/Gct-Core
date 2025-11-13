@@ -6,231 +6,231 @@
   },
   "variants": {
     "type": {
-      "improvedgem_default": {
+      "improved_default": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemimproved"
         }
       },
-      "concentragem_default": {
+      "concentra_default": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemconcentra"
         }
       },
-      "puregem_default": {
+      "pure_default": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgempure"
         }
       },
-      "extremegem_default": {
+      "extreme_default": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemextreme"
         }
       },
-      "origingem_default": {
+      "origin_default": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemorigin"
         }
       },
-      "primordialgem_default": {
+      "primordial_default": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemimordial"
         }
       },
-      "eternalgem_default": {
+      "eternal_default": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemeternal"
         }
       },
-      "infinitegem_default": {
+      "infinite_default": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemInfinite"
         }
       },
-      "realinfinitegem_default": {
+      "realinfinite_default": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemrealInfinite"
         }
       },
-      "improvedgem_corrosive": {
+      "improved_corrosive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemimproved_corrosive"
         }
       },
-      "concentragem_corrosive": {
+      "concentra_corrosive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemconcentra_corrosive"
         }
       },
-      "puregem_corrosive": {
+      "pure_corrosive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgempure_corrosive"
         }
       },
-      "extremegem_corrosive": {
+      "extreme_corrosive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemextreme_corrosive"
         }
       },
-      "origingem_corrosive": {
+      "origin_corrosive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemorigin_corrosive"
         }
       },
-      "primordialgem_corrosive": {
+      "primordial_corrosive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemimordial_corrosive"
         }
       },
-      "eternalgem_corrosive": {
+      "eternal_corrosive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemeternal_corrosive"
         }
       },
-      "infinitegem_corrosive": {
+      "infinite_corrosive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemInfinite_corrosive"
         }
       },
-      "realinfinitegem_corrosive": {
+      "realinfinite_corrosive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemrealInfinite_corrosive"
         }
       },
-      "improvedgem_vengeful": {
+      "improved_vengeful": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemImproved_vengeful"
         }
       },
-      "concentragem_vengeful": {
+      "concentra_vengeful": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemconcentra_vengeful"
         }
       },
-      "puregem_vengeful": {
+      "pure_vengeful": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgempure_vengeful"
         }
       },
-      "extremegem_vengeful": {
+      "extreme_vengeful": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemextreme_vengeful"
         }
       },
-      "origingem_vengeful": {
+      "origin_vengeful": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemorigin_vengeful"
         }
       },
-      "primordialgem_vengeful": {
+      "primordial_vengeful": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemimordial_vengeful"
         }
       },
-      "eternalgem_vengeful": {
+      "eternal_vengeful": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemeternal_vengeful"
         }
       },
-      "infinitegem_vengeful": {
+      "infinite_vengeful": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemInfinite_vengeful"
         }
       },
-      "realinfinitegem_vengeful": {
+      "realinfinite_vengeful": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemrealInfinite_vengeful"
         }
       },
-      "improvedgem_destructive": {
+      "improved_destructive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemImproved_destructive"
         }
       },
-      "concentragem_destructive": {
+      "concentra_destructive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemconcentra_destructive"
         }
       },
-      "puregem_destructive": {
+      "pure_destructive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgempure_destructive"
         }
       },
-      "extremegem_destructive": {
+      "extreme_destructive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemextreme_destructive"
         }
       },
-      "origingem_destructive": {
+      "origin_destructive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemorigin_destructive"
         }
       },
-      "primordialgem_destructive": {
+      "primordial_destructive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemimordial_destructive"
         }
       },
-      "eternalgem_destructive": {
+      "eternal_destructive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemeternal_destructive"
         }
       },
-      "infinitegem_destructive": {
+      "infinite_destructive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemInfinite_destructive"
         }
       },
-      "realinfinitegem_destructive": {
+      "realinfinite_destructive": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemrealInfinite_destructive"
         }
       },
-      "improvedgem_steadfast": {
+      "improved_steadfast": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemImproved_steadfast"
         }
       },
-      "concentragem_steadfast": {
+      "concentra_steadfast": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemconcentra_steadfast"
         }
       },
-      "puregem_steadfast": {
+      "pure_steadfast": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgempure_steadfast"
         }
       },
-      "extremegem_steadfast": {
+      "extreme_steadfast": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemextreme_steadfast"
         }
       },
-      "origingem_steadfast": {
+      "origin_steadfast": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemorigin_steadfast"
         }
       },
-      "primordialgem_steadfast": {
+      "primordial_steadfast": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemimordial_steadfast"
         }
       },
-      "eternalgem_steadfast": {
+      "eternal_steadfast": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemeternal_steadfast"
         }
       },
-      "infinitegem_steadfast": {
+      "infinite_steadfast": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemInfinite_steadfast"
         }
       },
-      "realinfinitegem_steadfast": {
+      "realinfinite_steadfast": {
         "textures": {
           "layer0": "gctcore:soulgem/soulgemrealInfinite_steadfast"
         }
-     }
+      }
     }
   }
 }

@@ -2,6 +2,7 @@ package com.smd.gctcore.init;
 
 import com.smd.gctcore.items.draconicevolution.*;
 import com.smd.gctcore.items.bloodmagic.soulgem.*;
+import net.minecraft.item.Item;
 
 public class GctItems {
     public static final ChaoticFluxCapacitor CHAOTIC_FLUX_CAPACITOR = new ChaoticFluxCapacitor();
