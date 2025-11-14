@@ -148,6 +148,8 @@ dependencies {
     implementation "curse.maven:bloodmagic-224791:2822288"
     implementation "curse.maven:thermal-expansion-69163:2926431"
     implementation "curse.maven:nuclearcraft-overhauled-336895:3862197"
+    implementation "curse.maven:EnderStorage-1354035:7035940"
+    implementation "curse.maven:CodeChickenLib-242818:2779848"
 
     compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698"
     compileOnly "curse.maven:iceandfire-264231:2939529"
