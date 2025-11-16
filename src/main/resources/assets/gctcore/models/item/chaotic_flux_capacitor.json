@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "gctcore:items/chaotic_flux_capacitor"
-  }
-}
