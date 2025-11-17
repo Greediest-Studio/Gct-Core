@@ -150,8 +150,6 @@ dependencies {
     implementation "curse.maven:nuclearcraft-overhauled-336895:3862197"
     implementation "curse.maven:EnderStorage-1354035:7035940"
     implementation "curse.maven:CodeChickenLib-242818:2779848"
-    implementation "curse.maven:tinkers-evolution-384589:6802732"
-    implementation "curse.maven:libnine-322344:6790812"
 
     compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698"
     compileOnly "curse.maven:iceandfire-264231:2939529"
