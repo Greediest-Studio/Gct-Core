@@ -150,6 +150,8 @@ dependencies {
     implementation "curse.maven:nuclearcraft-overhauled-336895:3862197"
     implementation "curse.maven:EnderStorage-1354035:7035940"
     implementation "curse.maven:CodeChickenLib-242818:2779848"
+    implementation "curse.maven:ExtraBotany-299086:3112313"
+    implementation "curse.maven:Botania-225643:3330934"
 
     compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698"
     compileOnly "curse.maven:iceandfire-264231:2939529"
