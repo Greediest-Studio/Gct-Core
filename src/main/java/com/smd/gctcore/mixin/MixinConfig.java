@@ -19,6 +19,7 @@ public class MixinConfig implements ILateMixinLoader {
         addModdedMixinCFG("mixins.gctcore.enderstorage.json", "enderstorage");
         addModdedMixinCFG("mixins.gctcore.extrabotany.json", "extrabotany");
         addModdedMixinCFG("mixins.gctcore.abyssalcraft.json", "abyssalcraft");
+        addModdedMixinCFG("mixins.gctcore.moretcon.json", "moretcon");
     }
 
     @Override
