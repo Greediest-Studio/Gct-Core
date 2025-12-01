@@ -2,7 +2,6 @@ package com.smd.gctcore.mixin.damageparticle;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.helpful.EntityFriendlyCreature;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -17,7 +16,10 @@ public abstract class MixinEntity {
         cancellable = true
     )
     private void gctcore$disableTeamCheckEntity(Entity other, CallbackInfoReturnable<Boolean> cir) {
-        if ((Object) this instanceof EntityFriendlyCreature) {
+        // 检查类名而不是直接 instanceof，避免 ClassNotFoundException
+        // Check class name instead of direct instanceof to avoid ClassNotFoundException
+        String className = this.getClass().getName();
+        if (className.contains("EntityFriendlyCreature")) {
             cir.setReturnValue(false);
         }
     }
