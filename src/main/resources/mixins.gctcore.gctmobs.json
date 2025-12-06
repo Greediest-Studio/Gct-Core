@@ -7,7 +7,8 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "MixinAlfheimCustomTree",
-    "MixinGctMobsDimensionKeepLoaded"
+    "MixinGctMobsDimensionKeepLoaded",
+    "MixinAlfheimPortal"
   ],
   "server": [],
   "client": []
