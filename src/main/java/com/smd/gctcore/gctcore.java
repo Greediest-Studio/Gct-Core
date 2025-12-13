@@ -21,6 +21,8 @@ public class gctcore {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new EventHooks());
+        // Register MoreTcon bedrock handler for whitelist-based mining restrictions
+        MinecraftForge.EVENT_BUS.register(new com.smd.gctcore.events.MoreTconBedrockHandler());
         
         // 注册维度
         DimensionManager.registerDimension(114514, DimensionTypeAirport.Airport);
