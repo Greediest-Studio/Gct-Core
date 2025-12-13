@@ -7,6 +7,8 @@ import com.smd.gctcore.world.NothingnessDim.DimensionTypeNothingness;
 import com.smd.gctcore.world.OrderCore.DimensionTypeOrderCore;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -29,6 +31,11 @@ public class gctcore {
         if (event.getSide() == Side.CLIENT) {
             ClientProxy clientProxy = new ClientProxy();
             clientProxy.preInit();
+        }
+
+        // If gct_mobs is present, register CrimsonTempleGenerator to spawn crimson_temple in beside_void
+        if (Loader.isModLoaded("gct_mobs")) {
+            GameRegistry.registerWorldGenerator(new com.smd.gctcore.world.CrimsonTempleGenerator(), 0);
         }
     }
 }
