@@ -11,7 +11,6 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 @Mod(modid = "gctcore", name = "Gct Core", version = "1.0.6")
@@ -36,21 +35,9 @@ public class gctcore {
             clientProxy.preInit();
         }
 
-        // Load configuration (including kabalah_builder recipes)
-        com.smd.gctcore.config.ConfigHandler.init(event.getSuggestedConfigurationFile());
-
         // If gct_mobs is present, register CrimsonTempleGenerator to spawn crimson_temple in beside_void
         if (Loader.isModLoaded("gct_mobs")) {
             GameRegistry.registerWorldGenerator(new com.smd.gctcore.world.CrimsonTempleGenerator(), 0);
-        }
-    }
-    @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-        // post init tasks
-        try {
-            com.smd.gctcore.config.ConfigKabalahInjector.inject(com.smd.gctcore.config.ConfigHandler.getConfigDirectory());
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }

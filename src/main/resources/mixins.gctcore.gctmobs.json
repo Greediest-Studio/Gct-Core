@@ -8,8 +8,7 @@
   "mixins": [
     "MixinAlfheimCustomTree",
     "MixinGctMobsDimensionKeepLoaded",
-    "MixinAlfheimPortal",
-    "MixinProcedureKabalahBuilderRecipe"
+    "MixinAlfheimPortal"
   ],
   "server": [],
   "client": []
