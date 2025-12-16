@@ -24,6 +24,7 @@ public class MixinConfig implements ILateMixinLoader {
         addModdedMixinCFG("mixins.gctcore.gctores.json", "gct_ores");
         addModdedMixinCFG("mixins.gctcore.gctaby.json", "gct_aby");
         addModdedMixinCFG("mixins.gctcore.industrialforegoing.json", "industrialforegoing");
+        addModdedMixinCFG("mixins.gctcore.bloodmagic.json", "bloodmagic");
     }
 
     @Override
