@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.smd.gctcore.mixin.thaumicadditions",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "mixins.gctcore.refmap.json",
+  "mixins": [
+    "MixinTileMithminiteJar"
+  ],
+  "client": [],
+  "server": []
+}
