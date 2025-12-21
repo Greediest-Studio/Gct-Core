@@ -35,6 +35,13 @@ public abstract class MixinTileMithminiteJar
     @Shadow
     public abstract void syncTile(boolean full);
 
+    /**
+     * Overwrite addToContainer to adjust mithminite jar behavior.
+     * This javadoc is intentionally present to satisfy Mixin processor requirements.
+     *
+     * @author gctcore
+     * @reason Adjust mithminite jar filling behavior to prevent issues and add overfill handling
+     */
     @Overwrite
     public int addToContainer(Object tt, int am)
     {

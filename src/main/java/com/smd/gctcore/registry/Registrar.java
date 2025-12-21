@@ -26,6 +26,7 @@ public class Registrar {
         event.getRegistry().register(GctItems.ORDERED_FLUX_CAPACITOR);
         event.getRegistry().register(GctItems.FROSTBURN_FLUX_CAPACITOR);
         event.getRegistry().register(GctItems.ITEM_SOUL_GEM);
+        event.getRegistry().register(GctItems.CRIMSON_ANCHOR);
     }
 
     @SubscribeEvent
@@ -53,6 +54,10 @@ public class Registrar {
             }
 
             ModelLoader.setCustomMeshDefinition(GctItems.ITEM_SOUL_GEM, mesh.getMeshDefinition());
+        
+            // Crimson Anchor
+            ModelLoader.setCustomModelResourceLocation(GctItems.CRIMSON_ANCHOR, 0,
+                new ModelResourceLocation(GctItems.CRIMSON_ANCHOR.getRegistryName(), "inventory"));
         }
     }
 }

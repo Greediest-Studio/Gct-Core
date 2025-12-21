@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * Targets ThaumicConcilium's EntityHexRift by name to avoid compile-time dependency.
  */
 @Pseudo
-@Mixin(targets = {"com.keletu.thaumicconcilium.entity.EntityHexRift"})
+@Mixin(targets = {"com.keletu.thaumicconcilium.entity.EntityHexRift"}, remap = false)
 public class MixinEntityHexRift {
 
     private static final String PONTIFEX_CLASS = "com.keletu.thaumicconcilium.entity.EntityCrimsonPontifex";

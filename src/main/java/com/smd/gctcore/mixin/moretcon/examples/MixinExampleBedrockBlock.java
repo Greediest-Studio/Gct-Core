@@ -5,6 +5,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import net.minecraft.block.BlockDirt;
 
 /**
  * EXAMPLE MIXIN - NOT ACTIVE BY DEFAULT
@@ -23,7 +24,7 @@ import org.spongepowered.asm.mixin.Mixin;
  * 
  * Note: This example targets BlockDirt, which you should change to your actual target.
  */
-@Mixin(targets = "net.minecraft.block.BlockDirt", remap = true)
+@Mixin(value = BlockDirt.class, remap = true)
 public abstract class MixinExampleBedrockBlock implements IGctBedrockMineable {
 
     /**

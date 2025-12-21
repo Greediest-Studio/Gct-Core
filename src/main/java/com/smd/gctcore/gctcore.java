@@ -1,6 +1,8 @@
 package com.smd.gctcore;
 
 import com.smd.gctcore.events.EventHooks;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import com.smd.gctcore.proxy.ClientProxy;
 import com.smd.gctcore.world.AirportDim.DimensionTypeAirport;
 import com.smd.gctcore.world.NothingnessDim.DimensionTypeNothingness;
@@ -17,6 +19,7 @@ import net.minecraftforge.fml.relauncher.Side;
 public class gctcore {
 
     public static final String MODID = "gctcore";
+    public static final Logger LOGGER = LogManager.getLogger(MODID);
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -35,9 +38,7 @@ public class gctcore {
             clientProxy.preInit();
         }
 
-        // If gct_mobs is present, register CrimsonTempleGenerator to spawn crimson_temple in beside_void
-        if (Loader.isModLoaded("gct_mobs")) {
-            GameRegistry.registerWorldGenerator(new com.smd.gctcore.world.CrimsonTempleGenerator(), 0);
-        }
+        // Always register CrimsonTempleGenerator to spawn crimson_temple in beside_void
+        GameRegistry.registerWorldGenerator(new com.smd.gctcore.world.CrimsonTempleGenerator(), 0);
     }
 }

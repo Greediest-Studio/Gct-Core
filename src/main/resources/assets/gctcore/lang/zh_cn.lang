@@ -33,3 +33,8 @@ tooltip.bloodmagic.infSoulGem=真的能存满吗？
 
 info.gct.energy=充能
 
+
+item.gctcore.crimson_anchor.name=§4血腥朝圣之锚
+message.crimson_anchor.found=§c一股血腥能量逸出，指向了(%d, %d, %d)的位置。
+message.crimson_anchor.notfound=§c一股血腥能量逸出，但很快又回去了。
+
