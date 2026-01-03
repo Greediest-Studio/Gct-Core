@@ -64,6 +64,15 @@ java {
     }
 }
 
+// Include compile-time stubs so mixins can reference types from optional mods
+sourceSets {
+    main {
+        java {
+            srcDirs += 'src/stubs/java'
+        }
+    }
+}
+
 configurations {
     embed
     implementation.extendsFrom(embed)
@@ -254,6 +263,8 @@ jar {
     }
     // Add all embedded dependencies into the jar
     from(provider{ configurations.embed.collect {it.isDirectory() ? it : zipTree(it)} })
+    // Exclude compile-time stubs from the final jar
+    exclude 'com/ejektaflex/pewter/**'
 }
 
 idea {
