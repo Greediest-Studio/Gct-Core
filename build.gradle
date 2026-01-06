@@ -163,6 +163,7 @@ dependencies {
     implementation "curse.maven:Botania-225643:3330934"
     implementation "curse.maven:AbyssalCraft-53686:6922627"
     implementation "curse.maven:moretcon-396545:7254880"
+    implementation "curse.maven:ToroHUD-303367:2624759"
 
     compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698"
     compileOnly "curse.maven:iceandfire-264231:2939529"
