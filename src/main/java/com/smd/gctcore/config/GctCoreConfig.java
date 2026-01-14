@@ -40,6 +40,19 @@ public class GctCoreConfig {
         public boolean treatAsSoftBedrock = true;
     }
 
+    @Config.Comment("AbyssalCraft")
+    @Config.Name("AbyssalCraft")
+    public static AbyssalCraft abyssalCraftIntegration = new AbyssalCraft();
+
+    public static class AbyssalCraft {
+
+        @Config.Comment({
+                "Enable Oblivion Catalyst Effects"
+        })
+        @Config.Name("Enable Oblivion Catalyst Effects")
+        public boolean enableOblivionCatalystEffects = true;
+    }
+
     @Mod.EventBusSubscriber(modid = "gctcore")
     private static class EventHandler {
         @SubscribeEvent
