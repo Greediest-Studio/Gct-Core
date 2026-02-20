@@ -10,7 +10,8 @@
     "MixinRemovePiscesOcean",
     "MixinGctMobsDimensionKeepLoaded",
     "MixinAlfheimPortal",
-    "MixinProcedureProKabalahBuilderRecipe"
+    "MixinProcedureProKabalahBuilderRecipe",
+    "MixinProcedureProKabalanBuilderTake"
   ],
   "server": [],
   "client": [
