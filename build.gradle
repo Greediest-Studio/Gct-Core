@@ -164,6 +164,8 @@ dependencies {
     implementation "curse.maven:AbyssalCraft-53686:6922627"
     implementation "curse.maven:moretcon-396545:7254880"
     implementation "curse.maven:ToroHUD-303367:2624759"
+    implementation "curse.maven:ThaumicRestoration-300198:2999857"
+    implementation "curse.maven:thaumcraft-223628:2629023"
 
     compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698"
     compileOnly "curse.maven:iceandfire-264231:2939529"

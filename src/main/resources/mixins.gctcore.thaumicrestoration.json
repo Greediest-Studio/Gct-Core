@@ -1,0 +1,13 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.smd.gctcore.mixin.thaumicrestoration",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "mixins.gctcore.refmap.json",
+  "mixins": [
+    "MixinTileAdvRechargePedestal",
+    "MixinTileCrystal"
+  ],
+  "client": [],
+  "server": []
+}

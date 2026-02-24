@@ -4,6 +4,7 @@ import com.smd.gctcore.ModPotions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,7 +25,7 @@ public class ClientEventHandler {
 
         if (ModPotions.sukhavati == null) return; // not yet registered
 
-        if (!mc.player.isPotionActive(ModPotions.sukhavati)) return;
+        if (!((EntityLivingBase)mc.player).isPotionActive(ModPotions.sukhavati)) return;
 
         ScaledResolution sr = new ScaledResolution(mc);
         int width = sr.getScaledWidth();
