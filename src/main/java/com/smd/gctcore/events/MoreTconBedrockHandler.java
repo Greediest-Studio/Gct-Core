@@ -6,6 +6,7 @@ import com.smd.gctcore.integration.moretcon.BedrockBlockChecker;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -19,8 +20,8 @@ public class MoreTconBedrockHandler {
             return;
         }
 
-        EntityPlayer player = (EntityPlayer) event.getEntityPlayer();
-        ItemStack held = player.getHeldItemMainhand();
+        EntityPlayer player = event.getEntityPlayer();
+        ItemStack held = player.getHeldItem(EnumHand.MAIN_HAND);
 
         // Only consider TConstruct tools
         if (!MixinEarlyAccessor.getToolCoreClass().isInstance(held.getItem())) {
