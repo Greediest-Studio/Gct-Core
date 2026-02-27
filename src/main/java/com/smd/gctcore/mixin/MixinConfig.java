@@ -28,7 +28,7 @@ public class MixinConfig implements ILateMixinLoader {
         addModdedMixinCFG("mixins.gctcore.pewter.json", "pewter");
         addModdedMixinCFG("mixins.gctcore.ToroHUD.json", "torohud");
         addModdedMixinCFG("mixins.gctcore.thaumicrestoration.json", "thaumicrestoration");
-        addMixinCFG("mixins.gctcore.enderio.json", () -> modLoaded("enderio"));
+        addModdedMixinCFG("mixins.gctcore.enderio.json","enderio");
     }
 
     @Override

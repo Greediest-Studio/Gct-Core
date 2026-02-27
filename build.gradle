@@ -143,33 +143,37 @@ dependencies {
         }
     }
 
-    implementation "curse.maven:aether-255308:6316434"
-    implementation "curse.maven:AstralSorcery-241721:3044416"
-    implementation "curse.maven:draconic-evolution-223565:3431261"
-    implementation "curse.maven:brandons-core-231382:3408276"
+    //implementation  mixin需要用什么自己开
+    compileOnly "curse.maven:aether-255308:6316434"
+    compileOnly "curse.maven:AstralSorcery-241721:3044416"
+    compileOnly "curse.maven:Mantle-74924:2713386"
+    compileOnly "curse.maven:TConstruct-74072:2902483"
+    compileOnly "curse.maven:mmce-817377:6945422"
+    compileOnly "curse.maven:thermal-expansion-69163:2926431"
+    compileOnly "curse.maven:nuclearcraft-overhauled-336895:3862197"
+    compileOnly "curse.maven:EnderStorage-1354035:7035940"
+    compileOnly "curse.maven:ExtraBotany-299086:3112313"
+    compileOnly "curse.maven:Botania-225643:3330934"
+    compileOnly "curse.maven:AbyssalCraft-53686:6922627"
+    compileOnly "curse.maven:moretcon-396545:7254880"
+    compileOnly "curse.maven:ToroHUD-303367:2624759"
+    compileOnly "curse.maven:ThaumicRestoration-300198:2999857"
+    compileOnly "curse.maven:thaumcraft-223628:2629023"
+    compileOnly "curse.maven:ageofminecraft-247133:2849572"
+    compileOnly "curse.maven:iceandfire-264231:2939529"
+    compileOnly "curse.maven:baubles-227083:2518667"
+    compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698"
+    //eio相关依赖
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation "curse.maven:redstone-flux-270789:2920436"
     implementation "curse.maven:jei-238222:5846804"
-    implementation "curse.maven:baubles-227083:2518667"
-    compileOnly "curse.maven:ageofminecraft-247133:2849572"
-    implementation "curse.maven:Mantle-74924:2713386"
-    implementation "curse.maven:TConstruct-74072:2902483"
-    implementation "curse.maven:mmce-817377:6945422"
     implementation "curse.maven:bloodmagic-224791:2822288"
-    implementation "curse.maven:thermal-expansion-69163:2926431"
-    implementation "curse.maven:nuclearcraft-overhauled-336895:3862197"
-    implementation "curse.maven:EnderStorage-1354035:7035940"
     implementation "curse.maven:CodeChickenLib-242818:2779848"
-    implementation "curse.maven:ExtraBotany-299086:3112313"
-    implementation "curse.maven:Botania-225643:3330934"
-    implementation "curse.maven:AbyssalCraft-53686:6922627"
-    implementation "curse.maven:moretcon-396545:7254880"
-    implementation "curse.maven:ToroHUD-303367:2624759"
-    implementation "curse.maven:ThaumicRestoration-300198:2999857"
-    implementation "curse.maven:thaumcraft-223628:2629023"
+    implementation "curse.maven:draconic-evolution-223565:3431261"
+    implementation "curse.maven:brandons-core-231382:3408276"
 
-    compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698"
-    compileOnly "curse.maven:iceandfire-264231:2939529"
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    runtimeOnly "curse.maven:guide-api-228832:2645992"
 
     if (propertyBool('use_asset_mover')) {
         implementation "com.cleanroommc:assetmover:${propertyString('asset_mover_version')}"
