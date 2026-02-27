@@ -20,4 +20,4 @@ build
 # other
 eclipse
 run
-src/main/resources
+src/main/resources/assets
