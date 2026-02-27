@@ -169,6 +169,7 @@ dependencies {
 
     compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698"
     compileOnly "curse.maven:iceandfire-264231:2939529"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     if (propertyBool('use_asset_mover')) {
         implementation "com.cleanroommc:assetmover:${propertyString('asset_mover_version')}"

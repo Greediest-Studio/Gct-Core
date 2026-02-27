@@ -53,6 +53,20 @@ public class GctCoreConfig {
         public boolean enableOblivionCatalystEffects = true;
     }
 
+    @Config.Comment("EnderIO")
+    @Config.Name("EnderIO")
+    public static EnderIOIntegration enderIOIntegration = new EnderIOIntegration();
+
+    public static class EnderIOIntegration {
+
+        @Config.Comment({
+                "Enable memory optimization for AlloyRecipeManager deduped recipe expansion.",
+                "If disabled, EnderIO's original addDedupedRecipe logic will be used."
+        })
+        @Config.Name("Enable Alloy Recipe Memory Optimization")
+        public boolean enableAlloyRecipeMemoryOptimization = true;
+    }
+
     @Mod.EventBusSubscriber(modid = "gctcore")
     private static class EventHandler {
         @SubscribeEvent
