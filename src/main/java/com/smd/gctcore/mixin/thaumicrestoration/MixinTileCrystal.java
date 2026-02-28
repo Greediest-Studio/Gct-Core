@@ -1,20 +1,16 @@
 package com.smd.gctcore.mixin.thaumicrestoration;
 
 import com.Zoko061602.ThaumicRestoration.tile.TileCrystal;
-import net.minecraft.util.ITickable;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Pseudo;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Pseudo
 @Mixin(TileCrystal.class)
-public class MixinTileCrystal implements ITickable {
+public class MixinTileCrystal {
 
-    /**
-     * @author Gct-Core
-     * @reason 禁用源质结晶效果
-     */
-    @Overwrite(remap = false)
-    public void update() {
+    @Inject(method = "func_73660_a", at = @At("HEAD"), cancellable = true, remap = false)
+    private void onUpdate(CallbackInfo ci) {
+        ci.cancel();
     }
 }
