@@ -1,6 +1,7 @@
 package com.smd.gctcore.registry;
 
 import com.smd.gctcore.Tags;
+import com.smd.gctcore.entity.EntityReversedAlfMaster;
 import com.smd.gctcore.init.GctItems;
 import WayofTime.bloodmagic.client.IMeshProvider;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -11,6 +12,8 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import com.google.common.collect.Sets;
@@ -19,6 +22,19 @@ import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = Tags.MOD_ID)
 public class Registrar {
+
+    @SubscribeEvent
+    public static void registerEntities(RegistryEvent.Register<EntityEntry> event) {
+        event.getRegistry().register(
+                EntityEntryBuilder.create()
+                        .entity(EntityReversedAlfMaster.class)
+                        .id(new ResourceLocation(Tags.MOD_ID, "reversed_alf_master"), 1)
+                        .name("reversed_alf_master")
+                        .tracker(64, 3, true)
+                        .egg(-11534229, -5273345)
+                        .build()
+        );
+    }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {

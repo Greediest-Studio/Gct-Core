@@ -8,8 +8,7 @@ import com.smd.gctcore.world.AirportDim.DimensionTypeAirport;
 import com.smd.gctcore.world.NothingnessDim.DimensionTypeNothingness;
 import com.smd.gctcore.world.OrderCore.DimensionTypeOrderCore;
 import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.common.MinecraftForge;import net.minecraftforge.fml.common.Loader;import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -24,8 +23,10 @@ public class gctcore {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new EventHooks());
-        // Register MoreTcon bedrock handler for whitelist-based mining restrictions
-        MinecraftForge.EVENT_BUS.register(new com.smd.gctcore.events.MoreTconBedrockHandler());
+        // MoreTcon 基岩挖掘限制，仅在 moretcon 存在时注册，避免开发环境 NoClassDefFoundError
+        if (Loader.isModLoaded("moretcon")) {
+            MinecraftForge.EVENT_BUS.register(new com.smd.gctcore.events.MoreTconBedrockHandler());
+        }
         
         // 注册维度
         DimensionManager.registerDimension(114514, DimensionTypeAirport.Airport);
