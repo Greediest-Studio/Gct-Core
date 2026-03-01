@@ -70,17 +70,8 @@ public class EntityReversedAlfMaster extends EntityMob {
         this.tasks.addTask(3, new EntityAIWander(this, 0.8D));
         this.tasks.addTask(4, new EntityAILookIdle(this));
 
-        // 被攻击时反击（仅当攻击者不携带 reversed_vision 时才设置仇恨目标）
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false) {
-            @Override
-            public boolean shouldExecute() {
-                Entity target = EntityReversedAlfMaster.this.getRevengeTarget();
-                if (target instanceof EntityPlayer) {
-                    if (hasReversedVision((EntityPlayer) target)) return false;
-                }
-                return super.shouldExecute();
-            }
-        });
+        // 被攻击时正常反击（无论攻击者是否携带 reversed_vision）
+        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 
         // 主动寻找并攻击不携带 reversed_vision 的玩家
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<>(
@@ -100,19 +91,6 @@ public class EntityReversedAlfMaster extends EntityMob {
     private static boolean hasReversedVision(EntityPlayer player) {
         Potion reversedVision = Potion.REGISTRY.getObject(REVERSED_VISION_RL);
         return reversedVision != null && player.isPotionActive(reversedVision);
-    }
-
-    // ── 真正的中立：对携带 reversed_vision 的玩家的攻击完全免疫 ───────────────
-
-    @Override
-    public boolean attackEntityFrom(DamageSource source, float amount) {
-        if (source.getTrueSource() instanceof EntityPlayer) {
-            if (hasReversedVision((EntityPlayer) source.getTrueSource())) {
-                // 吸收伤害但不触发 revengeTarget，保持绝对中立
-                return false;
-            }
-        }
-        return super.attackEntityFrom(source, amount);
     }
 
     // ── 属性 ───────────────────────────────────────────────────────────────────
