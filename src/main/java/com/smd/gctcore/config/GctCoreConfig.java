@@ -53,18 +53,18 @@ public class GctCoreConfig {
         public boolean enableOblivionCatalystEffects = true;
     }
 
-    @Config.Comment("EnderIO")
-    @Config.Name("EnderIO")
-    public static EnderIOIntegration enderIOIntegration = new EnderIOIntegration();
+    @Config.Comment("Astral Sorcery integration settings")
+    @Config.Name("Astral Sorcery")
+    public static AstralSorceryIntegration astralSorceryIntegration = new AstralSorceryIntegration();
 
-    public static class EnderIOIntegration {
+    public static class AstralSorceryIntegration {
 
         @Config.Comment({
-                "Enable memory optimization for AlloyRecipeManager deduped recipe expansion.",
-                "If disabled, EnderIO's original addDedupedRecipe logic will be used."
+                "调整允许的最大技能效率，基础值为1，-1默认为不修改，"
         })
-        @Config.Name("Enable Alloy Recipe Memory Optimization")
-        public boolean enableAlloyRecipeMemoryOptimization = true;
+        @Config.Name("最大技能效率")
+        @Config.RangeDouble(min = -1, max = 10)
+        public double maxPerkEffect = -1;
     }
 
     @Mod.EventBusSubscriber(modid = "gctcore")
