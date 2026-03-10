@@ -8,6 +8,13 @@ item.gctcore.ItemSoulGem.eternal.name=[永恒]地狱魂石
 item.gctcore.ItemSoulGem.infinite.name=[无尽]地狱魂石
 item.gctcore.ItemSoulGem.realInfinite.name=[终尽]地狱魂石
 
+item.bloodmagic.orb.eldritch.name=[邪术]气血宝珠
+item.bloodmagic.orb.murder.name=[咒渊]气血宝珠
+item.bloodmagic.orb.origin.name=[本源]气血宝珠
+item.bloodmagic.orb.truth.name=[真理]气血宝珠
+item.bloodmagic.orb.endless.name=[生生不息]气血宝珠
+item.bloodmagic.orb.the_end.name=[终尽]气血宝珠
+
 item.gctcore.chaotic_flux_capacitor.name=通量容器-MK3
 item.gctcore.ordered_flux_capacitor.name=通量容器-MK4
 item.gctcore.frostburn_flux_capacitor.name=通量容器-MK5

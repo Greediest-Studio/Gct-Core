@@ -1,6 +1,7 @@
 package com.smd.gctcore;
 
 import com.smd.gctcore.events.EventHooks;
+import net.minecraft.creativetab.CreativeTabs;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.smd.gctcore.proxy.ClientProxy;
@@ -8,7 +9,7 @@ import com.smd.gctcore.world.AirportDim.DimensionTypeAirport;
 import com.smd.gctcore.world.NothingnessDim.DimensionTypeNothingness;
 import com.smd.gctcore.world.OrderCore.DimensionTypeOrderCore;
 import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.common.MinecraftForge;import net.minecraftforge.fml.common.Loader;import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.common.MinecraftForge;import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -27,7 +28,7 @@ public class gctcore {
         if (Loader.isModLoaded("moretcon")) {
             MinecraftForge.EVENT_BUS.register(new com.smd.gctcore.events.MoreTconBedrockHandler());
         }
-        
+
         // 注册维度
         DimensionManager.registerDimension(114514, DimensionTypeAirport.Airport);
         DimensionManager.registerDimension(-114514, DimensionTypeNothingness.nothingness);

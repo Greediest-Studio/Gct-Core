@@ -1,4 +1,3 @@
-
 item.gctcore.ItemSoulGem.realInfinite.name=Real InfiniteGem Tartaric Gem
 item.gctcore.ItemSoulGem.improved.name=ImprovedGem Tartaric Gem
 item.gctcore.ItemSoulGem.concentra.name=ConcentraGem Tartaric Gem
@@ -8,6 +7,14 @@ item.gctcore.ItemSoulGem.origin.name=OriginGem Tartaric Gem
 item.gctcore.ItemSoulGem.primordial.name=PrimordialGem Tartaric Gem
 item.gctcore.ItemSoulGem.eternal.name=EternalGem Tartaric Gem
 item.gctcore.ItemSoulGem.infinite.name=InfiniteGem Tartaric Gem
+
+item.bloodmagic.orb.eldritch.name=Evilmagic Blood Orb
+item.bloodmagic.orb.murder.name=CurseAbyss Blood Orb
+item.bloodmagic.orb.origin.name=origin Blood Orb
+item.bloodmagic.orb.truth.name=truth Blood Orb
+item.bloodmagic.orb.endless.name=endless Blood Orb
+item.bloodmagic.orb.the_end.name=the_end Blood Orb
+
 
 item.gctcore.chaotic_flux_capacitor.name=Chaotic Flux Capacitor
 item.gctcore.ordered_flux_capacitor.name=Ordered Flux Capacitor
