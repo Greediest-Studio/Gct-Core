@@ -1,6 +1,7 @@
 package com.smd.gctcore.mixin.ageofminecraft;
 
 import net.minecraft.entity.boss.EntityDragon;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
@@ -41,8 +42,9 @@ public class MixinEngenderGeneralEvent {
     private void preventEnderDragonDeathSpawns(LivingDeathEvent event, CallbackInfo ci) {
         // 检查死亡实体是否为原版末影龙
         // Check if the dying entity is vanilla EnderDragon
-        if (event.getEntity() instanceof EntityDragon) {
-            // 提前返回，完全跳过末影龙死亡后的生成逻辑
+        // 好像没必要多写个方法，修玩家死亡概率崩溃的先塞这里了（
+        if (event.getEntity() instanceof EntityDragon || event.getEntity() instanceof EntityPlayer) {
+            // 提前返回，完全跳过末影龙&玩家死亡后的生成逻辑
             // Return early, completely skip the spawn logic after EnderDragon death
             ci.cancel();
         }
