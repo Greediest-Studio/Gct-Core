@@ -40,7 +40,8 @@ public class gctcore {
             clientProxy.preInit();
         }
 
-        // Always register CrimsonTempleGenerator to spawn crimson_temple in beside_void
+        // Register structure generators
         GameRegistry.registerWorldGenerator(new com.smd.gctcore.world.CrimsonTempleGenerator(), 0);
+        GameRegistry.registerWorldGenerator(new com.smd.gctcore.world.ShadowberryCaveGenerator(), 0);
     }
 }
