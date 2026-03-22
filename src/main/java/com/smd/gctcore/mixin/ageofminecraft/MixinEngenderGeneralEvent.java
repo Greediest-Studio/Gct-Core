@@ -2,6 +2,7 @@ package com.smd.gctcore.mixin.ageofminecraft;
 
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
@@ -48,5 +49,17 @@ public class MixinEngenderGeneralEvent {
             // Return early, completely skip the spawn logic after EnderDragon death
             ci.cancel();
         }
+    }
+
+    @Inject(
+            method = "lootLoad",
+            at = @At("HEAD"),
+            cancellable = true,
+            remap = false,
+            require = 0  // 设置为可选，避免在没有Engender Mod时崩溃
+    )
+    public void stoplootLoad(LootTableLoadEvent event, CallbackInfo ci) {
+        //不许往战利品表塞垃圾喵
+        ci.cancel();
     }
 }
