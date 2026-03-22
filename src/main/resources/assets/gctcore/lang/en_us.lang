@@ -1,3 +1,10 @@
+key.gctcore.categories=Gct Core
+
+key.gctcore.mining_speed_add=MiningSpeedIncreased
+key.gctcore.mining_speed_minus=ReducedDiggingSpeed
+
+hud.mining_speed=miningMultiplier：%sx
+
 item.gctcore.ItemSoulGem.realInfinite.name=Real InfiniteGem Tartaric Gem
 item.gctcore.ItemSoulGem.improved.name=ImprovedGem Tartaric Gem
 item.gctcore.ItemSoulGem.concentra.name=ConcentraGem Tartaric Gem
@@ -14,7 +21,7 @@ item.bloodmagic.orb.origin.name=origin Blood Orb
 item.bloodmagic.orb.truth.name=truth Blood Orb
 item.bloodmagic.orb.endless.name=endless Blood Orb
 item.bloodmagic.orb.the_end.name=the_end Blood Orb
-
+item.gctcore.crimson_anchor.name=§4AnchorOfABloodyPilgrimage
 
 item.gctcore.chaotic_flux_capacitor.name=Chaotic Flux Capacitor
 item.gctcore.ordered_flux_capacitor.name=Ordered Flux Capacitor
@@ -26,6 +33,11 @@ tooltip.bloodmagic.currentBaseType.corrosive=Corrosive
 tooltip.bloodmagic.currentBaseType.destructive=Destructive
 tooltip.bloodmagic.currentBaseType.vengeful=Vengeful
 tooltip.bloodmagic.currentBaseType.steadfast=Steadfast
+tooltip.bloodmagic.currentType.default=Contains: Raw Will
+tooltip.bloodmagic.currentType.corrosive=Contains: Corrosive Will
+tooltip.bloodmagic.currentType.destructive=Contains: Destructive Will
+tooltip.bloodmagic.currentType.vengeful=Contains: Vengeful Will
+tooltip.bloodmagic.currentType.steadfast=Contains: Steadfast Will
 
 tooltip.bloodmagic.soulgem.improved=The product of technology.
 tooltip.bloodmagic.soulgem.concentra=Forged through brutal compression.
@@ -43,3 +55,6 @@ info.gct.energy=Energy
 effect.sukhavati=Sukhavati
 
 entity.reversed_alf_master.name=Reversed Alf Master
+
+message.crimson_anchor.found=§c A Bloody Energy Escaped And Pointed§f(%d, %d, %d)§c location。
+message.crimson_anchor.notfound=§c A Bloody Energy Escaped But Soon WentBack。

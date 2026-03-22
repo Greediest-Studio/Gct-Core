@@ -1,3 +1,10 @@
+key.gctcore.categories=Gct Core
+
+key.gctcore.mining_speed_add=挖掘速度提升
+key.gctcore.mining_speed_minus=挖掘速度降低
+
+hud.mining_speed=挖掘倍率：%sx
+
 item.gctcore.ItemSoulGem.improved.name=[改进]地狱魂石
 item.gctcore.ItemSoulGem.concentra.name=[浓缩]地狱魂石
 item.gctcore.ItemSoulGem.pure.name=[纯粹]地狱魂石
@@ -18,9 +25,9 @@ item.bloodmagic.orb.the_end.name=[终尽]气血宝珠
 item.gctcore.chaotic_flux_capacitor.name=通量容器-MK3
 item.gctcore.ordered_flux_capacitor.name=通量容器-MK4
 item.gctcore.frostburn_flux_capacitor.name=通量容器-MK5
+item.gctcore.crimson_anchor.name=§4血腥朝圣之锚
 
 tooltip.bloodmagic.will=意志质量：%1$,.2f
-
 tooltip.bloodmagic.currentType.default=蕴含：原生意志
 tooltip.bloodmagic.currentType.corrosive=蕴含：腐蚀意志
 tooltip.bloodmagic.currentType.destructive=蕴含：破坏意志
@@ -41,7 +48,6 @@ tooltip.bloodmagic.infSoulGem=真的能存满吗？
 info.gct.energy=充能
 
 
-item.gctcore.crimson_anchor.name=§4血腥朝圣之锚
 message.crimson_anchor.found=§c一股血腥能量逸出，指向了§f(%d, %d, %d)§c的位置。
 message.crimson_anchor.notfound=§c一股血腥能量逸出，但很快又回去了。
 

@@ -1,7 +1,8 @@
 package com.smd.gctcore;
 
 import com.smd.gctcore.events.EventHooks;
-import net.minecraft.creativetab.CreativeTabs;
+import com.smd.gctcore.events.MiningSpeedHandler;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.smd.gctcore.proxy.ClientProxy;
@@ -24,6 +25,7 @@ public class gctcore {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new EventHooks());
+        MinecraftForge.EVENT_BUS.register(new MiningSpeedHandler());
         // MoreTcon 基岩挖掘限制，仅在 moretcon 存在时注册，避免开发环境 NoClassDefFoundError
         if (Loader.isModLoaded("moretcon")) {
             MinecraftForge.EVENT_BUS.register(new com.smd.gctcore.events.MoreTconBedrockHandler());
@@ -38,6 +40,8 @@ public class gctcore {
         if (event.getSide() == Side.CLIENT) {
             ClientProxy clientProxy = new ClientProxy();
             clientProxy.preInit();
+            ClientRegistry.registerKeyBinding(MiningSpeedHandler.KEY_MINING_SPEED_ADD);
+            ClientRegistry.registerKeyBinding(MiningSpeedHandler.KEY_MINING_SPEED_MINUS);
         }
 
         // Register structure generators
