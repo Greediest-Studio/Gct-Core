@@ -47,4 +47,11 @@ public class WorldProviderAirport extends WorldProvider {
         this.biomeProvider = new BiomeProviderSingle(Biomes.VOID);
         this.hasSkyLight = true;
     }
+
+    @Override
+    public void calculateInitialWeather() {
+    }
+
+    @Override
+    public void updateWeather() {}
 }
